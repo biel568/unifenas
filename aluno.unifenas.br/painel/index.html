@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="07ZuenEF0csrFNXfWH6ePpxoarlr7C4V5Xq9V0T9">
+
+    <title>Aluno | Unifenas - Links</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="https://aluno.unifenas.br/dashboard-novo/favicon/favicon.ico">
+
+    <!-- Bootstrap Css -->
+    <link href="https://aluno.unifenas.br/dashboard-novo/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://aluno.unifenas.br/dashboard-novo/css/index.css" rel="stylesheet" type="text/css">
+
+    <!-- Icons Css -->
+    <link href="https://aluno.unifenas.br/dashboard-novo/css/icons.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- App Css-->
+    <link href="https://aluno.unifenas.br/dashboard-novo/css/app.min.css" rel="stylesheet" type="text/css">
+
+    <!-- App js -->
+    <script src="https://aluno.unifenas.br/dashboard-novo/js/plugin.js"></script>
+
+    <!-- page loading css and js -->
+    <link rel="stylesheet" href="https://aluno.unifenas.br/dashboard-novo/css/page-loading.css">
+    <script src="https://aluno.unifenas.br/dashboard-novo/js/page-loading.js"></script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWLFRB0WNJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QWLFRB0WNJ');
+    </script>
+
+    <style>
+        [wire\:loading],
+        [wire\:loading\.delay],
+        [wire\:loading\.inline-block],
+        [wire\:loading\.inline],
+        [wire\:loading\.block],
+        [wire\:loading\.flex],
+        [wire\:loading\.table],
+        [wire\:loading\.grid],
+        [wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        input:-webkit-autofill,
+        select:-webkit-autofill,
+        textarea:-webkit-autofill {
+            animation-duration: 50000s;
+            animation-name: livewireautofill;
+        }
+
+        @keyframes livewireautofill {
+            from {}
+        }
+    </style>
+
+    <script type="text/javascript" class="flasher-js">
+        (function() {
+            var rootScript = 'https://cdn.jsdelivr.net/npm/@flasher/flasher@1.3.1/dist/flasher.min.js';
+            var FLASHER_FLASH_BAG_PLACE_HOLDER = {};
+            var options = mergeOptions([], FLASHER_FLASH_BAG_PLACE_HOLDER);
+
+            function mergeOptions(first, second) {
+                return {
+                    context: merge(first.context || {}, second.context || {}),
+                    envelopes: merge(first.envelopes || [], second.envelopes || []),
+                    options: merge(first.options || {}, second.options || {}),
+                    scripts: merge(first.scripts || [], second.scripts || []),
+                    styles: merge(first.styles || [], second.styles || []),
+                };
+            }
+
+            function merge(first, second) {
+                if (Array.isArray(first) && Array.isArray(second)) {
+                    return first.concat(second).filter(function(item, index, array) {
+                        return array.indexOf(item) === index;
+                    });
+                }
+                return Object.assign({}, first, second);
+            }
+
+            function renderOptions(options) {
+                if (!window.hasOwnProperty('flasher')) {
+                    console.error('Flasher is not loaded');
+                    return;
+                }
+                requestAnimationFrame(function() {
+                    window.flasher.render(options);
+                });
+            }
+
+            function render(options) {
+                if ('loading' !== document.readyState) {
+                    renderOptions(options);
+                    return;
+                }
+                document.addEventListener('DOMContentLoaded', function() {
+                    renderOptions(options);
+                });
+            }
+            if (1 === document.querySelectorAll('script.flasher-js').length) {
+                document.addEventListener('flasher:render', function(event) {
+                    render(event.detail);
+                });
+            }
+            if (window.hasOwnProperty('flasher') || !rootScript || document.querySelector('script[src="' + rootScript + '"]')) {
+                render(options);
+            } else {
+                var tag = document.createElement('script');
+                tag.setAttribute('src', rootScript);
+                tag.setAttribute('type', 'text/javascript');
+                tag.onload = function() {
+                    render(options);
+                };
+                document.head.appendChild(tag);
+            }
+        })();
+    </script>
+</head>
+
+<!-- Page loading spinner -->
+<div class="page-loading active">
+    <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Carregando...</span>
+    </div>
+</div>
+
+<!-- Body -->
+
+<body data-sidebar="dark">
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <div id="layout-wrapper">
+
+        <!-- header -->
+        <header id="page-topbar">
+            <div class="navbar-header">
+                <div class="d-flex">
+
+                    <!-- LOGO -->
+                    <div class="navbar-brand-box">
+                        <a href="https://aluno.unifenas.br/painel/links" class="logo">
+                                <span class="logo-sm">
+                                    <img src="https://aluno.unifenas.br/dashboard-novo/images/unifenas/logo-min-branco.png" alt="" height="65">
+                                </span>
+                                <span class="logo-lg">
+                                    <img src="https://aluno.unifenas.br/dashboard-novo/images/unifenas/logo_white.svg" alt="" height="48">
+                                </span>
+                            </a>
+                    </div>
+
+                    <!-- collapse button -->
+                    <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+                </div>
+
+                <div class="menu-user-desktop d-flex">
+                    <div class="menu-user-img">
+                        <i class='bx bxs-user-circle bx-lg'></i>
+                    </div>
+                    <div class="menu-user-info">
+                        <span><b>GABRIEL REIS DA SILVEIRA</b></span>
+                        <span><b>RA:</b> 201604251</span>
+                    </div>
+                    <div class="menu-user-dados">
+                        <span><b>72 - CIÊNCIA DA COMPUTAÇÃO</b></span>
+                        <span><b>Série: 1 <b>Período:</b> 2501</span>
+                        <span><b>Status:</b>
+                                                                    <span class="badge bg-success shadow-success">Matriculado</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                                <i class="bx bx-cog"></i>
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Menu Lateral -->
+        <div class="vertical-menu">
+            <div data-simplebar class="h-100">
+                <div class="menu-user-mobile pt-5">
+                    <div class="menu-user-mobile-img">
+                        <i class='bx bxs-user-circle bx-lg'></i>
+                    </div>
+                    <div class="menu-user-mobile-info">
+                        <h5><b>GABRIEL REIS DA SILVEIRA</b></h5>
+                        <span>RA: 201604251</span>
+                        <span>72 - CIÊNCIA DA COMPUTAÇÃO</span>
+                        <span>Série: 1</span>
+                        <span>Período: 2501</span>
+                        <span>Turma: </span>
+                        <span><b>Status:</b>
+                                                                    <span class="badge bg-success shadow-success mb-3">Matriculado</span>
+                        </span>
+                    </div>
+                </div>
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled mt-3" id="side-menu">
+                        <li>
+                            <a href="https://aluno.unifenas.br/painel/links" class="waves-effect">
+                                    <i class="bx bx-collection"></i>
+                                    <span>Links do Sistema</span>
+                                </a>
+                        </li>
+
+                        </li>
+                        <li>
+
+                        </li>
+                        <li></li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class='bx bx-calendar'></i>
+                                    <span>Calendário</span>
+                                </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="https://aluno.unifenas.br/painel/cronograma">Cronograma Acadêmico</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2F1bGFz" target="_blank">Horário de Aulas</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FnZW5kYQ==" target="_blank">Calendário</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class='bx bx-trending-up'></i>
+                                    <span>Avaliação</span>
+                                </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2JvbGV0aW0vbm90YXMtZS1mYWx0YXM=" target="_blank">Boletim</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2ZyZXF1ZW5jaWE=" target="_blank">Frequência</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2luZGljZS1yZW5kaW1lbnRvcw==" target="_blank">Índice de Rendimento</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class='bx bx-book-content' ></i>
+                                    <span>Disciplina</span>
+                                </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Rpc2NpcGxpbmFz" target="_blank">Disciplinas Matriculadas</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2hpc3Rvcmljbw==" target="_blank">Histórico</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL21pbmhhLXR1cm1hLWxpc3Q=" target="_blank">Minha Turma</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Rpc2NpcGxpbmFzLXB1YmxpY2Fjb2Vz" target="_blank">Publicações</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2RpYXJpby1jbGFzc2U=" target="_blank">Diário de Classe</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class='bx bxs-user-detail'></i>
+                                    <span>Cadastro</span>
+                                </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="https://aluno.unifenas.br/painel">Visão geral</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FsdW5vLWNhZGFzdHJv" target="_blank">Dados Cadastrais</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2RvY3VtZW50b3M=" target="_blank">Documentos</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class='bx bx-spreadsheet' ></i>
+                                    <span>Secretaria Virtual</span>
+                                </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL3NlcnZpY28tbGlzdA==" target="_blank">Solicitação de Serviços</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL21hdHJpY3VsYQ==" target="_blank">Matrícula / Assinar contrato</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2NvbnRyYXRv" target="_blank">Contratos assinados</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class='bx bx-dollar-circle'></i>
+                                    <span>Financeiro</span>
+                                </a>
+                            <ul class="sub-menu" aria-expanded="false">
+
+                                <li><a href="https://aluno.unifenas.br/painel/pagamentos">Boletos</a></li>
+
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Fjb3Jkb3MvY29uc3VsdGE=" target="_blank">Acordo</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FsdW5vLWV4dHJhdG8=" target="_blank">Extrato Financeiro</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class='bx bx-trophy'></i>
+                                    <span>Certificados / Extensão</span>
+                                </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="https://www.unifenas.br/portaldoaluno/certificados_ano.asp" target="_blank">Certificados de Monitoria</a></li>
+                                <li><a href="https://www.unifenas.br/extensao/certificados_ano_medicina.asp" target="_blank">Certificados de Estágio</a></li>
+                                <li><a href="https://www.unifenas.br/extensao/declaracoes_ano.asp" target="_blank">Declarações</a></li>
+                                <li><a href="https://www.unifenas.br/extensao/certificados/validar.asp" target="_blank">Validações</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2F2YWxpYWNhbw==" class="waves-effect" target="_blank">
+                                    <i class='bx bx-smile' ></i>
+                                    <span>Avaliação Institucional</span>
+                                </a>
+                        </li>
+
+
+
+
+
+
+                        <li>
+                            <a href="https://aluno.unifenas.br/painel/seguranca" class="waves-effect">
+                                    <i class='bx bx-wifi' ></i>
+                                    <span>WiFi Unifenas</span>
+                                </a>
+                        </li>
+                        <li>
+                            <a href="https://aluno.unifenas.br/painel/email" class="waves-effect">
+                                    <i class="bx bx-mail-send"></i>
+                                    <span>Email Institucional</span>
+                                </a>
+                        </li>
+                        <li>
+                            <a href="https://aluno.unifenas.br/logout" class="waves-effect">
+                                    <i class="bx bx-log-out"></i>
+                                    <span>Sair</span>
+                                </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- conteúdo -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-xl-4">
+                            <a href="https://aluno.unifenas.br/auto-login-moodle" target="_blank">
+                                <div class="card card-links">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-3">
+                                            <img class="card-img img-fluid" src="https://aluno.unifenas.br/dashboard-novo/images/unifenas/logo_moodle.png" alt="Moodle">
+                                        </div>
+                                        <div class=" col-9 ">
+                                            <div class="card-body body-custom">
+                                                <h5 class="card-title ">Ambiente virtual </h5>
+                                                <p class="card-text ">Acesse aqui o ambiente virtual da UNIFENAS</p>
+                                                <p class="card-text "><small class=" text-muted ">Clique para acessar</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-md-6 col-xl-4">
+                            <a href="https://mail.google.com/mail/u/1/" target="_blank">
+                                <div class="card card-links">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-3">
+                                            <img class="card-img img-fluid" src="https://aluno.unifenas.br/dashboard-novo/images/unifenas/logo_gmail.png" alt="Gmail">
+                                        </div>
+                                        <div class=" col-9 ">
+                                            <div class="card-body body-custom">
+                                                <h5 class="card-title ">E-mail institucional </h5>
+                                                <p class="card-text ">Acesse seu email institucional da Unifenas</p>
+                                                <p class="card-text "><small class=" text-muted ">Clique para acessar</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <a href="https://classroom.google.com" target="_blank">
+                                <div class="card card-links">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-3">
+                                            <img class="card-img img-fluid" src="https://aluno.unifenas.br/dashboard-novo/images/unifenas/logo_classroom.png" alt="Classroom">
+                                        </div>
+                                        <div class=" col-9 ">
+                                            <div class="card-body body-custom">
+                                                <h5 class="card-title ">Classroom </h5>
+                                                <p class="card-text ">Acesse aqui a sala de aula virtual da Unifenas</p>
+                                                <p class="card-text "><small class=" text-muted ">Clique para acessar</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <a href="http://www.unifenas.br/portaldoaluno.asp" target="_blank">
+                                <div class="card card-links">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-3">
+                                            <img class="card-img img-fluid" src="https://aluno.unifenas.br/dashboard-novo/images/unifenas/logo_infoacad.png" alt="Informações acadêmicas">
+                                        </div>
+                                        <div class=" col-9 ">
+                                            <div class="card-body body-custom">
+                                                <h5 class="card-title ">Informações acadêmicas </h5>
+                                                <p class="card-text ">Portal de informações acadêmicas do aluno</p>
+                                                <p class="card-text "><small class=" text-muted ">Clique para acessar</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-xl-4">
+                            <a href="https://api.whatsapp.com/send/?phone=553140002386&amp;text&amp;app_absent=0" target="_blank">
+                                <div class="card card-links">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-3">
+                                            <img class="card-img img-fluid" src="https://aluno.unifenas.br/dashboard-novo/images/unifenas/wpp.webp" alt="Suporte">
+                                        </div>
+                                        <div class=" col-9 ">
+                                            <div class="card-body body-custom">
+                                                <h5 class="card-title ">Central de Atendimento </h5>
+                                                <p class="card-text ">Whatsapp ou e-mail centraldeatendimento@unifenas.br</p>
+                                                <p class="card-text "><small class=" text-muted ">Clique para acessar</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- menu de configurações -->
+    <div class="right-bar">
+        <div data-simplebar class="h-100">
+            <div class="rightbar-title d-flex align-items-center px-3 py-4">
+
+                <h5 class="m-0 me-2">Configurações</h5>
+
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
+                        <i class="mdi mdi-close noti-icon"></i>
+                    </a>
+            </div>
+
+            <!-- Settings -->
+            <hr class="mt-0">
+            <h6 class="text-center mb-0">Tema</h6>
+
+            <div class="p-4">
+                <div class="mb-2">
+                    <img src="https://aluno.unifenas.br/dashboard-novo/images/layouts/layout-1.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="light-mode-switch" checked>
+                    <label class="form-check-label" for="light-mode-switch">Tema Claro</label>
+                </div>
+
+                <div class="mb-2">
+                    <img src="https://aluno.unifenas.br/dashboard-novo/images/layouts/layout-2.jpg" class="img-thumbnail" alt="layout images">
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input theme-choice" type="checkbox" id="dark-mode-switch">
+                    <label class="form-check-label" for="dark-mode-switch">Tema Escuro</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right bar overlay-->
+    <div class="rightbar-overlay"></div>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://aluno.unifenas.br/dashboard-novo/libs/jquery/jquery.min.js"></script>
+    <script src="https://aluno.unifenas.br/dashboard-novo/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://aluno.unifenas.br/dashboard-novo/libs/metismenu/metisMenu.min.js"></script>
+    <script src="https://aluno.unifenas.br/dashboard-novo/libs/simplebar/simplebar.min.js"></script>
+    <script src="https://aluno.unifenas.br/dashboard-novo/libs/node-waves/waves.min.js"></script>
+
+    <!-- Datatable init js -->
+    <script src="https://aluno.unifenas.br/dashboard-novo/js/pages/datatables.init.js"></script>
+    <script src="https://aluno.unifenas.br/dashboard-novo/js/app.js"></script>
+
+
+    <div wire:id="XsSRJn3wSON833lMEmVC" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;XsSRJn3wSON833lMEmVC&quot;,&quot;name&quot;:&quot;livewire-ui-modal&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;painel\/links&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;openModal&quot;,&quot;destroyComponent&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;0b203baf&quot;,&quot;data&quot;:{&quot;activeComponent&quot;:null,&quot;components&quot;:[]},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;f458ca3d3249fe8c97f36f822895ad3c44ca853f979380fdf446d908194b8a01&quot;}}">
+        <script>
+            (() => {
+                var t, e = {
+                        331: () => {
+                            function t(t) {
+                                return function(t) {
+                                    if (Array.isArray(t)) return e(t)
+                                }(t) || function(t) {
+                                    if ("undefined" != typeof Symbol && null != t[Symbol.iterator] || null != t["@@iterator"]) return Array.from(t)
+                                }(t) || function(t, o) {
+                                    if (!t) return;
+                                    if ("string" == typeof t) return e(t, o);
+                                    var n = Object.prototype.toString.call(t).slice(8, -1);
+                                    "Object" === n && t.constructor && (n = t.constructor.name);
+                                    if ("Map" === n || "Set" === n) return Array.from(t);
+                                    if ("Arguments" === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return e(t, o)
+                                }(t) || function() {
+                                    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")
+                                }()
+                            }
+
+                            function e(t, e) {
+                                (null == e || e > t.length) && (e = t.length);
+                                for (var o = 0, n = new Array(e); o < e; o++) n[o] = t[o];
+                                return n
+                            }
+                            window.LivewireUIModal = function() {
+                                return {
+                                    show: !1,
+                                    showActiveComponent: !0,
+                                    activeComponent: !1,
+                                    componentHistory: [],
+                                    modalWidth: null,
+                                    getActiveComponentModalAttribute: function(t) {
+                                        if (void 0 !== this.$wire.get("components")[this.activeComponent]) return this.$wire.get("components")[this.activeComponent].modalAttributes[t]
+                                    },
+                                    closeModalOnEscape: function(t) {
+                                        if (!1 !== this.getActiveComponentModalAttribute("closeOnEscape")) {
+                                            var e = !0 === this.getActiveComponentModalAttribute("closeOnEscapeIsForceful");
+                                            this.closeModal(e)
+                                        }
+                                    },
+                                    closeModalOnClickAway: function(t) {
+                                        !1 !== this.getActiveComponentModalAttribute("closeOnClickAway") && this.closeModal(!0)
+                                    },
+                                    closeModal: function() {
+                                        var t = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
+                                            e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0,
+                                            o = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+                                        if (!1 !== this.show) {
+                                            if (!0 === this.getActiveComponentModalAttribute("dispatchCloseEvent")) {
+                                                var n = this.$wire.get("components")[this.activeComponent].name;
+                                                Livewire.emit("modalClosed", n)
+                                            }
+                                            if (!0 === this.getActiveComponentModalAttribute("destroyOnClose") && Livewire.emit("destroyComponent", this.activeComponent), e > 0)
+                                                for (var i = 0; i < e; i++) {
+                                                    if (o) {
+                                                        var r = this.componentHistory[this.componentHistory.length - 1];
+                                                        Livewire.emit("destroyComponent", r)
+                                                    }
+                                                    this.componentHistory.pop()
+                                                }
+                                            var s = this.componentHistory.pop();
+                                            s && !1 === t && s ? this.setActiveModalComponent(s, !0) : this.setShowPropertyTo(!1)
+                                        }
+                                    },
+                                    setActiveModalComponent: function(t) {
+                                        var e = this,
+                                            o = arguments.length > 1 && void 0 !== arguments[1] && arguments[1];
+                                        if (this.setShowPropertyTo(!0), this.activeComponent !== t) {
+                                            !1 !== this.activeComponent && !1 === o && this.componentHistory.push(this.activeComponent);
+                                            var n = 50;
+                                            !1 === this.activeComponent ? (this.activeComponent = t, this.showActiveComponent = !0, this.modalWidth = this.getActiveComponentModalAttribute("maxWidthClass")) : (this.showActiveComponent = !1, n = 400, setTimeout((function() {
+                                                e.activeComponent = t, e.showActiveComponent = !0, e.modalWidth = e.getActiveComponentModalAttribute("maxWidthClass")
+                                            }), 300)), this.$nextTick((function() {
+                                                var o, i = null === (o = e.$refs[t]) || void 0 === o ? void 0 : o.querySelector("[autofocus]");
+                                                i && setTimeout((function() {
+                                                    i.focus()
+                                                }), n)
+                                            }))
+                                        }
+                                    },
+                                    focusables: function() {
+                                        return t(this.$el.querySelectorAll("a, button, input, textarea, select, details, [tabindex]:not([tabindex='-1'])")).filter((function(t) {
+                                            return !t.hasAttribute("disabled")
+                                        }))
+                                    },
+                                    firstFocusable: function() {
+                                        return this.focusables()[0]
+                                    },
+                                    lastFocusable: function() {
+                                        return this.focusables().slice(-1)[0]
+                                    },
+                                    nextFocusable: function() {
+                                        return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable()
+                                    },
+                                    prevFocusable: function() {
+                                        return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable()
+                                    },
+                                    nextFocusableIndex: function() {
+                                        return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1)
+                                    },
+                                    prevFocusableIndex: function() {
+                                        return Math.max(0, this.focusables().indexOf(document.activeElement)) - 1
+                                    },
+                                    setShowPropertyTo: function(t) {
+                                        var e = this;
+                                        this.show = t, t ? document.body.classList.add("overflow-y-hidden") : (document.body.classList.remove("overflow-y-hidden"), setTimeout((function() {
+                                            e.activeComponent = !1, e.$wire.resetState()
+                                        }), 300))
+                                    },
+                                    init: function() {
+                                        var t = this;
+                                        this.modalWidth = this.getActiveComponentModalAttribute("maxWidthClass"), Livewire.on("closeModal", (function() {
+                                            var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0],
+                                                o = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 0,
+                                                n = arguments.length > 2 && void 0 !== arguments[2] && arguments[2];
+                                            t.closeModal(e, o, n)
+                                        })), Livewire.on("activeModalComponentChanged", (function(e) {
+                                            t.setActiveModalComponent(e)
+                                        }))
+                                    }
+                                }
+                            }
+                        },
+                        754: () => {}
+                    },
+                    o = {};
+
+                function n(t) {
+                    var i = o[t];
+                    if (void 0 !== i) return i.exports;
+                    var r = o[t] = {
+                        exports: {}
+                    };
+                    return e[t](r, r.exports, n), r.exports
+                }
+                n.m = e, t = [], n.O = (e, o, i, r) => {
+                    if (!o) {
+                        var s = 1 / 0;
+                        for (u = 0; u < t.length; u++) {
+                            for (var [o, i, r] = t[u], a = !0, c = 0; c < o.length; c++)(!1 & r || s >= r) && Object.keys(n.O).every((t => n.O[t](o[c]))) ? o.splice(c--, 1) : (a = !1, r < s && (s = r));
+                            if (a) {
+                                t.splice(u--, 1);
+                                var l = i();
+                                void 0 !== l && (e = l)
+                            }
+                        }
+                        return e
+                    }
+                    r = r || 0;
+                    for (var u = t.length; u > 0 && t[u - 1][2] > r; u--) t[u] = t[u - 1];
+                    t[u] = [o, i, r]
+                }, n.o = (t, e) => Object.prototype.hasOwnProperty.call(t, e), (() => {
+                    var t = {
+                        387: 0,
+                        109: 0
+                    };
+                    n.O.j = e => 0 === t[e];
+                    var e = (e, o) => {
+                            var i, r, [s, a, c] = o,
+                                l = 0;
+                            if (s.some((e => 0 !== t[e]))) {
+                                for (i in a) n.o(a, i) && (n.m[i] = a[i]);
+                                if (c) var u = c(n)
+                            }
+                            for (e && e(o); l < s.length; l++) r = s[l], n.o(t, r) && t[r] && t[r][0](), t[r] = 0;
+                            return n.O(u)
+                        },
+                        o = self.webpackChunk = self.webpackChunk || [];
+                    o.forEach(e.bind(null, 0)), o.push = e.bind(null, o.push.bind(o))
+                })(), n.O(void 0, [109], (() => n(331)));
+                var i = n.O(void 0, [109], (() => n(754)));
+                i = n.O(i)
+            })();
+        </script>
+
+        <div x-data="LivewireUIModal()" x-init="init()" x-on:close.stop="setShowPropertyTo(false)" x-on:keydown.escape.window="closeModalOnEscape()" x-show="show" class="fixed inset-0 z-10 overflow-y-auto" style="display: none;">
+            <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-10 text-center sm:block sm:p-0">
+                <div x-show="show" x-on:click="closeModalOnClickAway()" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0" class="fixed inset-0 transition-all transform">
+                    <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                <div x-show="show && showActiveComponent" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-bind:class="modalWidth" class="inline-block w-full align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:w-full"
+                    id="modal-container" x-trap.noscroll.inert="show && showActiveComponent" aria-modal="true">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Livewire Component wire-end:XsSRJn3wSON833lMEmVC -->
+    <script src="/vendor/livewire/livewire.js?id=90730a3b0e7144480175" data-turbo-eval="false" data-turbolinks-eval="false"></script>
+    <script data-turbo-eval="false" data-turbolinks-eval="false">
+        window.livewire = new Livewire();
+        window.Livewire = window.livewire;
+        window.livewire_app_url = '';
+        window.livewire_token = '07ZuenEF0csrFNXfWH6ePpxoarlr7C4V5Xq9V0T9';
+        window.deferLoadingAlpine = function(callback) {
+            window.addEventListener('livewire:load', function() {
+                callback();
+            });
+        };
+        let started = false;
+        window.addEventListener('alpine:initializing', function() {
+            if (!started) {
+                window.livewire.start();
+                started = true;
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!started) {
+                window.livewire.start();
+                started = true;
+            }
+        });
+    </script>
+</body>
+
+
+<script type="text/javascript" src="https://cronchatcronapp.cronapp.io/get-chat?token=c724a5a5c8f5f3e3d5a3b9f9b8a4f3d4"></script>
+
+</html>

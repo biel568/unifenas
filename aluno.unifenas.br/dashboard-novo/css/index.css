@@ -1,0 +1,94 @@
+.logo-sm img {
+    margin-left: -20px;
+}
+
+.card-img {
+    width: 75% !important;
+    margin-left: 25%;
+}
+
+.vertical-menu,
+.navbar-brand-box {
+    background-color: #00436e !important;
+}
+
+.menu-user-mobile {
+    display: none;
+}
+
+.menu-user-img img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.menu-user-info,
+.menu-user-dados {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin-left: 5px;
+    font-size: 12px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.menu-user-info {
+    width: 30%;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.menu-user-dados {
+    width: 45%;
+    padding-left: 3%;
+    border-left: 1px solid #d1d1d1;
+}
+
+.card-links {
+    height: 10rem;
+}
+
+.bg-primary {
+    background-color: #00a9ff !important;
+}
+
+.text-primary {
+    color: #0087df !important;
+}
+
+@media screen and (max-width: 580px) {
+    .menu-user-desktop {
+        display: none !important;
+    }
+    .menu-user-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .menu-user-mobile-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .menu-user-mobile-info h5,
+    .menu-user-mobile-info span {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .col-9 {
+        margin-top: -3%;
+    }
+}
+
+@media screen and (max-width: 1198px) {
+    .col-9 {
+        margin-top: 0;
+    }
+}
