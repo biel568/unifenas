@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="07ZuenEF0csrFNXfWH6ePpxoarlr7C4V5Xq9V0T9">
@@ -88,6 +90,134 @@
         @keyframes livewireautofill {
             from {}
         }
+
+        
+        /* Sidebar menu: SVG icon alignment */
+        #sidebar-menu .metismenu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        #sidebar-menu .metismenu a.has-arrow {
+            padding-right: 36px;
+        }
+
+        #sidebar-menu .metismenu a .menu-icon {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            flex-shrink: 0;
+            display: inline-block;
+            aspect-ratio: 1 / 1;
+        }
+
+        #sidebar-menu .metismenu .sub-menu a .menu-icon {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+        }
+
+        #sidebar-menu .metismenu a > span {
+            line-height: 1.2;
+        }
+
+        #sidebar-menu .metismenu a:hover {
+            filter: brightness(1.05);
+        }
+
+        #sidebar-menu .metismenu li.mm-active > a,
+        #sidebar-menu .metismenu a.active {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Sidebar controls and profile */
+        #vertical-menu-btn,
+        .settings-toggle-btn,
+        .right-bar-toggle.ms-auto {
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        #vertical-menu-btn:hover,
+        .settings-toggle-btn:hover,
+        .right-bar-toggle.ms-auto:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .settings-icon,
+        .settings-close-icon {
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
+            display: block;
+        }
+
+        .settings-icon {
+            color: currentColor;
+            transition: transform 0.25s ease;
+        }
+
+        body.right-bar-enabled .settings-icon {
+            transform: rotate(90deg);
+        }
+
+        .menu-user-img,
+        .menu-user-mobile-img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-user-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(255, 255, 255, 0.22);
+        }
+
+        .menu-user-mobile-img .menu-user-avatar {
+            width: 64px;
+            height: 64px;
+        }
+
+        .vertical-menu,
+        .main-content {
+            transition: transform 0.28s ease, margin-left 0.28s ease, width 0.28s ease;
+        }
+
+        .right-bar {
+            transition: right 0.28s ease, transform 0.28s ease;
+        }
+
+        .rightbar-overlay {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.28s ease, visibility 0.28s ease;
+        }
+
+        body.right-bar-enabled .rightbar-overlay {
+            opacity: 0.45;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 991.98px) {
+            .vertical-menu {
+                transform: translateX(-105%);
+            }
+
+            body.sidebar-enable .vertical-menu {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0 !important;
+            }
+        }
     </style>
 
     <script type="text/javascript" class="flasher-js">
@@ -163,7 +293,7 @@
 
 <!-- Body -->
 
-<body data-sidebar="dark">
+<body data-sidebar="dark" data-user-id="">
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -197,13 +327,13 @@
 
                     <!-- collapse button -->
                     <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
-                            <i class="fa fa-fw fa-bars"></i>
+                            <i class="fa-solid fa-bars"></i>
                         </button>
                 </div>
 
                 <div class="menu-user-desktop d-flex">
                     <div class="menu-user-img">
-                        <i class='bx bxs-user-circle bx-lg'></i>
+                        <img class="menu-user-avatar" src="sua-foto.jpeg" alt="Foto de perfil">
                     </div>
                     <div class="menu-user-info">
                         <span><b>JOÃO GABRIEL DE OLIVEIRA PEREIRA</b></span>
@@ -221,8 +351,8 @@
                 <div class="d-flex">
 
                     <div class="dropdown d-inline-block">
-                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                                <i class="bx bx-cog"></i>
+                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect settings-toggle-btn" aria-label="Abrir configurações">
+                                <svg class="settings-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10.2 2h3.6l.5 2.1a7.9 7.9 0 0 1 1.8.8l1.9-1.1 2.6 2.6-1.1 1.9c.3.6.6 1.2.8 1.8L22 10.2v3.6l-2.1.5a7.9 7.9 0 0 1-.8 1.8l1.1 1.9-2.6 2.6-1.9-1.1c-.6.3-1.2.6-1.8.8L13.8 22h-3.6l-.5-2.1a7.9 7.9 0 0 1-1.8-.8l-1.9 1.1-2.6-2.6 1.1-1.9c-.3-.6-.6-1.2-.8-1.8L2 13.8v-3.6l2.1-.5c.2-.6.5-1.2.8-1.8L3.8 6l2.6-2.6 1.9 1.1c.6-.3 1.2-.6 1.8-.8L10.2 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
                             </button>
                     </div>
                 </div>
@@ -234,14 +364,14 @@
             <div data-simplebar class="h-100">
                 <div class="menu-user-mobile pt-5">
                     <div class="menu-user-mobile-img">
-                        <i class='bx bxs-user-circle bx-lg'></i>
+                        <img class="menu-user-avatar" src="sua-foto.jpeg" alt="Foto de perfil">
                     </div>
                     <div class="menu-user-mobile-info">
                         <h5><b>JOÃO GABRIEL DE OLIVEIRA PEREIRA</b></h5>
-                        <span>RA: 201604251</span>
+                        <span>RA: 211604251</span>
                         <span>72 - CIÊNCIA DA COMPUTAÇÃO</span>
                         <span>Série: 1</span>
-                        <span>Período: 2501</span>
+                        <span>Período: 2601</span>
                         <span>Turma: </span>
                         <span><b>Status:</b>
                                                                     <span class="badge bg-success shadow-success mb-3">Matriculado</span>
@@ -255,101 +385,95 @@
                     <ul class="metismenu list-unstyled mt-3" id="side-menu">
                         <li>
                             <a href="https://aluno.unifenas.br/painel/links" class="waves-effect">
-                                    <i class="bx bx-collection"></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11a5 5 0 0 1 0 7L12.5 19.5a5 5 0 0 1-7-7L7 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                     <span>Links do Sistema</span>
                                 </a>
                         </li>
-
-                        </li>
-                        <li>
-
-                        </li>
-                        <li></li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bx-calendar'></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3 11h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                                     <span>Calendário</span>
                                 </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="https://aluno.unifenas.br/painel/cronograma">Cronograma Acadêmico</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2F1bGFz" target="_blank">Horário de Aulas</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FnZW5kYQ==" target="_blank">Calendário</a></li>
+                                <li><a href="https://aluno.unifenas.br/painel/cronograma"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Cronograma Acadêmico</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2F1bGFz" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Horário de Aulas</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FnZW5kYQ==" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Calendário</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bx-trending-up'></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 17l7-7 4 4 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 7h7v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                     <span>Avaliação</span>
                                 </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2JvbGV0aW0vbm90YXMtZS1mYWx0YXM=" target="_blank">Boletim</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2ZyZXF1ZW5jaWE=" target="_blank">Frequência</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2luZGljZS1yZW5kaW1lbnRvcw==" target="_blank">Índice de Rendimento</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2JvbGV0aW0vbm90YXMtZS1mYWx0YXM=" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Boletim</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2ZyZXF1ZW5jaWE=" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Frequência</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2luZGljZS1yZW5kaW1lbnRvcw==" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Índice de Rendimento</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bx-book-content' ></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 6.5C2 5.12 3.12 4 4.5 4H11v16H4.5A2.5 2.5 0 0 1 2 17.5V6.5z" stroke="currentColor" stroke-width="1.8"/><path d="M22 6.5C22 5.12 20.88 4 19.5 4H13v16h6.5a2.5 2.5 0 0 0 2.5-2.5V6.5z" stroke="currentColor" stroke-width="1.8"/></svg>
                                     <span>Disciplina</span>
                                 </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Rpc2NpcGxpbmFz" target="_blank">Disciplinas Matriculadas</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2hpc3Rvcmljbw==" target="_blank">Histórico</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL21pbmhhLXR1cm1hLWxpc3Q=" target="_blank">Minha Turma</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Rpc2NpcGxpbmFzLXB1YmxpY2Fjb2Vz" target="_blank">Publicações</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2RpYXJpby1jbGFzc2U=" target="_blank">Diário de Classe</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Rpc2NpcGxpbmFz" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Disciplinas Matriculadas</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2hpc3Rvcmljbw==" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Histórico</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL21pbmhhLXR1cm1hLWxpc3Q=" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Minha Turma</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Rpc2NpcGxpbmFzLXB1YmxpY2Fjb2Vz" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Publicações</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2RpYXJpby1jbGFzc2U=" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Diário de Classe</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bxs-user-detail'></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M5 19a7 7 0 0 1 14 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                                     <span>Cadastro</span>
                                 </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="https://aluno.unifenas.br/painel">Visão geral</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FsdW5vLWNhZGFzdHJv" target="_blank">Dados Cadastrais</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2RvY3VtZW50b3M=" target="_blank">Documentos</a></li>
+                                <li><a href="https://aluno.unifenas.br/painel"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Visão geral</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FsdW5vLWNhZGFzdHJv" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Dados Cadastrais</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2RvY3VtZW50b3M=" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Documentos</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bx-spreadsheet' ></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M9 4v16M15 4v16" stroke="currentColor" stroke-width="1.8"/></svg>
                                     <span>Secretaria Virtual</span>
                                 </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL3NlcnZpY28tbGlzdA==" target="_blank">Solicitação de Serviços</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL21hdHJpY3VsYQ==" target="_blank">Matrícula / Assinar contrato</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2NvbnRyYXRv" target="_blank">Contratos assinados</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL3NlcnZpY28tbGlzdA==" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Solicitação de Serviços</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL21hdHJpY3VsYQ==" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Matrícula / Assinar contrato</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2NvbnRyYXRv" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Contratos assinados</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bx-dollar-circle'></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M15.5 9.5c0-1.38-1.57-2.5-3.5-2.5s-3.5 1.12-3.5 2.5 1.57 2.5 3.5 2.5 3.5 1.12 3.5 2.5-1.57 2.5-3.5 2.5-3.5-1.12-3.5-2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                     <span>Financeiro</span>
                                 </a>
                             <ul class="sub-menu" aria-expanded="false">
 
-                                <li><a href="https://aluno.unifenas.br/painel/pagamentos">Boletos</a></li>
+                                <li><a href="https://aluno.unifenas.br/painel/pagamentos"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Boletos</span></a></li>
 
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Fjb3Jkb3MvY29uc3VsdGE=" target="_blank">Acordo</a></li>
-                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FsdW5vLWV4dHJhdG8=" target="_blank">Extrato Financeiro</a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2Fjb3Jkb3MvY29uc3VsdGE=" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Acordo</span></a></li>
+                                <li><a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2FsdW5vLWV4dHJhdG8=" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Extrato Financeiro</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class='bx bx-trophy'></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5h8v3a4 4 0 0 1-8 0V5z" stroke="currentColor" stroke-width="1.8"/><path d="M9 14h6v3H9zM12 17v3M6 20h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 6H5a2 2 0 0 0-2 2 4 4 0 0 0 4 4M16 6h3a2 2 0 0 1 2 2 4 4 0 0 1-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                                     <span>Certificados / Extensão</span>
                                 </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="https://www.unifenas.br/portaldoaluno/certificados_ano.asp" target="_blank">Certificados de Monitoria</a></li>
-                                <li><a href="https://www.unifenas.br/extensao/certificados_ano_medicina.asp" target="_blank">Certificados de Estágio</a></li>
-                                <li><a href="https://www.unifenas.br/extensao/declaracoes_ano.asp" target="_blank">Declarações</a></li>
-                                <li><a href="https://www.unifenas.br/extensao/certificados/validar.asp" target="_blank">Validações</a></li>
+                                <li><a href="https://www.unifenas.br/portaldoaluno/certificados_ano.asp" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Certificados de Monitoria</span></a></li>
+                                <li><a href="https://www.unifenas.br/extensao/certificados_ano_medicina.asp" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Certificados de Estágio</span></a></li>
+                                <li><a href="https://www.unifenas.br/extensao/declaracoes_ano.asp" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Declarações</span></a></li>
+                                <li><a href="https://www.unifenas.br/extensao/certificados/validar.asp" target="_blank"><svg class="menu-icon menu-icon-sub" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="menu-label">Validações</span></a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="https://unifenas.lyceum.com.br/AOnline3/index.html#/autologin?a=MjAxNjA0MjUx&b=MTQzMjc0OTc2NTc=&c=Iy9ob21lL2F2YWxpYWNhbw==" class="waves-effect" target="_blank">
-                                    <i class='bx bx-smile' ></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8 15s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M9 10h.01M15 10h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
                                     <span>Avaliação Institucional</span>
                                 </a>
                         </li>
@@ -361,19 +485,19 @@
 
                         <li>
                             <a href="https://aluno.unifenas.br/painel/seguranca" class="waves-effect">
-                                    <i class='bx bx-wifi' ></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 9a16 16 0 0 1 20 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M5 12a11 11 0 0 1 14 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 15.5a6 6 0 0 1 7 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>
                                     <span>WiFi Unifenas</span>
                                 </a>
                         </li>
                         <li>
                             <a href="https://aluno.unifenas.br/painel/email" class="waves-effect">
-                                    <i class="bx bx-mail-send"></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                     <span>Email Institucional</span>
                                 </a>
                         </li>
                         <li>
                             <a href="https://aluno.unifenas.br/logout" class="waves-effect">
-                                    <i class="bx bx-log-out"></i>
+                                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 8l-4 4 4 4M6 12h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                                     <span>Sair</span>
                                 </a>
                         </li>
@@ -496,8 +620,8 @@
 
                 <h5 class="m-0 me-2">Configurações</h5>
 
-                <a href="javascript:void(0);" class="right-bar-toggle ms-auto">
-                        <i class="mdi mdi-close noti-icon"></i>
+                <a href="javascript:void(0);" class="right-bar-toggle ms-auto settings-close-btn" aria-label="Fechar configurações">
+                        <svg class="settings-close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                     </a>
             </div>
 
@@ -541,6 +665,117 @@
     <script src="https://aluno.unifenas.br/dashboard-novo/js/app.js"></script>
 
 
+
+    <script>
+        (function() {
+            function setClassState(el, className, force) {
+                if (!el) return false;
+                if (typeof force === "boolean") {
+                    el.classList.toggle(className, force);
+                    return force;
+                }
+                el.classList.toggle(className);
+                return el.classList.contains(className);
+            }
+
+            function toggleSidebar(forceOpen) {
+                var body = document.body;
+                var isDesktop = window.innerWidth >= 992;
+                if (isDesktop) {
+                    return setClassState(body, "vertical-collpsed", forceOpen);
+                }
+                return setClassState(body, "sidebar-enable", forceOpen);
+            }
+
+            function toggleConfigPanel(forceOpen) {
+                return setClassState(document.body, "right-bar-enabled", forceOpen);
+            }
+
+            function getUserId() {
+                var body = document.body;
+                if (body && body.dataset && body.dataset.userId) {
+                    return body.dataset.userId;
+                }
+
+                var raNode = document.querySelector(".menu-user-info");
+                if (!raNode) {
+                    return "";
+                }
+
+                var match = raNode.textContent.match(/RA:\s*(\d+)/i);
+                return match ? match[1] : "";
+            }
+
+            function buildInlineAvatar() {
+                return "data:image/svg+xml;utf8," + encodeURIComponent(
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none"><rect width="96" height="96" rx="48" fill="#1D2A39"/><circle cx="48" cy="36" r="16" stroke="#FFFFFF" stroke-width="4"/><path d="M22 78c4-14 14-22 26-22s22 8 26 22" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/></svg>'
+                );
+            }
+
+            function applyProfilePhoto() {
+                var userId = getUserId();
+                if (!userId) {
+                    return;
+                }
+
+                var avatars = document.querySelectorAll("[data-user-avatar]");
+                var fallbackSvg = buildInlineAvatar();
+                var defaultPhoto = "/assets/perfil/default.jpg";
+                var userPhoto = "/assets/perfil/" + userId + ".jpg";
+
+                avatars.forEach(function(img) {
+                    img.onerror = function() {
+                        if (img.dataset.fallbackApplied === "1") {
+                            img.onerror = null;
+                            img.src = fallbackSvg;
+                            return;
+                        }
+                        img.dataset.fallbackApplied = "1";
+                        img.src = defaultPhoto;
+                    };
+                    img.src = userPhoto;
+                });
+            }
+
+            function bindExtraControls() {
+                if (window.jQuery) {
+                    window.jQuery("#vertical-menu-btn").off("click").on("click", function(event) {
+                        event.preventDefault();
+                        toggleSidebar();
+                    });
+
+                    window.jQuery(".right-bar-toggle").off("click").on("click", function(event) {
+                        event.preventDefault();
+                        toggleConfigPanel();
+                    });
+                }
+
+                var overlay = document.querySelector(".rightbar-overlay");
+                if (overlay) {
+                    overlay.addEventListener("click", function() {
+                        toggleConfigPanel(false);
+                    });
+                }
+
+                document.addEventListener("keydown", function(event) {
+                    if (event.key === "Escape") {
+                        toggleConfigPanel(false);
+                        if (window.innerWidth < 992) {
+                            toggleSidebar(false);
+                        }
+                    }
+                });
+            }
+
+            window.toggleSidebar = toggleSidebar;
+            window.toggleConfigPanel = toggleConfigPanel;
+
+            document.addEventListener("DOMContentLoaded", function() {
+                applyProfilePhoto();
+                bindExtraControls();
+            });
+        })();
+    </script>
     <div wire:id="XsSRJn3wSON833lMEmVC" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;XsSRJn3wSON833lMEmVC&quot;,&quot;name&quot;:&quot;livewire-ui-modal&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;painel\/links&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[&quot;openModal&quot;,&quot;destroyComponent&quot;]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;0b203baf&quot;,&quot;data&quot;:{&quot;activeComponent&quot;:null,&quot;components&quot;:[]},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;f458ca3d3249fe8c97f36f822895ad3c44ca853f979380fdf446d908194b8a01&quot;}}">
         <script>
             (() => {
@@ -768,3 +1003,6 @@
 <script type="text/javascript" src="https://cronchatcronapp.cronapp.io/get-chat?token=c724a5a5c8f5f3e3d5a3b9f9b8a4f3d4"></script>
 
 </html>
+
+
+
