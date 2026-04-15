@@ -102,6 +102,30 @@
 
         #sidebar-menu .metismenu a.has-arrow {
             padding-right: 36px;
+            position: relative;
+        }
+
+        /* Setinhas do submenu (forçadas por CSS para sempre aparecer) */
+        #sidebar-menu .metismenu a.has-arrow::after {
+            content: "";
+            display: inline-block !important;
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(-45deg);
+            margin-top: -4px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            opacity: 0.9;
+            flex-shrink: 0;
+        }
+
+        #sidebar-menu .metismenu li.mm-active > a.has-arrow::after,
+        #sidebar-menu .metismenu a.has-arrow[aria-expanded="true"]::after {
+            transform: rotate(45deg);
         }
 
         #sidebar-menu .metismenu a .menu-icon {
@@ -333,15 +357,15 @@
 
                 <div class="menu-user-desktop d-flex">
                     <div class="menu-user-img">
-                        <img class="menu-user-avatar" src="sua-foto.jpeg" alt="Foto de perfil">
+                        <img class="menu-user-avatar" src="assets/perfil/sua-foto.jpeg" alt="Foto de perfil">
                     </div>
                     <div class="menu-user-info">
                         <span><b>JOÃO GABRIEL DE OLIVEIRA PEREIRA</b></span>
-                        <span><b>RA:</b> 201604251</span>
+                        <span><b>RA:</b> 211604251</span>
                     </div>
                     <div class="menu-user-dados">
-                        <span><b>72 - CIÊNCIA DA COMPUTAÇÃO</b></span>
-                        <span><b>Série: 1 <b>Período:</b> 2501</span>
+                        <span><b>72 - DIREITO</b></span>
+                        <span><b>Série: 1 <b>Período:</b> 2601</span>
                         <span><b>Status:</b>
                                                                     <span class="badge bg-success shadow-success">Matriculado</span>
                         </span>
@@ -364,12 +388,12 @@
             <div data-simplebar class="h-100">
                 <div class="menu-user-mobile pt-5">
                     <div class="menu-user-mobile-img">
-                        <img class="menu-user-avatar" src="sua-foto.jpeg" alt="Foto de perfil">
+                        <img class="menu-user-avatar" src="assets/perfil/sua-foto.jpeg" alt="Foto de perfil">
                     </div>
                     <div class="menu-user-mobile-info">
                         <h5><b>JOÃO GABRIEL DE OLIVEIRA PEREIRA</b></h5>
                         <span>RA: 211604251</span>
-                        <span>72 - CIÊNCIA DA COMPUTAÇÃO</span>
+                        <span>72 - DIREITO</span>
                         <span>Série: 1</span>
                         <span>Período: 2601</span>
                         <span>Turma: </span>
@@ -997,7 +1021,14 @@
             }
         });
     </script>
+    <script>
+$(document).ready(function () {
+    $("#side-menu").metisMenu();
+});
+</script>
+    
 </body>
+
 
 
 <script type="text/javascript" src="https://cronchatcronapp.cronapp.io/get-chat?token=c724a5a5c8f5f3e3d5a3b9f9b8a4f3d4"></script>
