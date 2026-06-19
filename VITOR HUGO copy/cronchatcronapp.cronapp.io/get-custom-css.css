@@ -1,0 +1,116 @@
+.chatbox-header {
+    background: #04436f !important
+}
+
+.chatbox-header h2 {
+    font-family: Arial !important;
+    font-size: 16px !important;
+    color: White !important
+}
+
+.avatar-intro p {
+    font-family: Arial !important;
+    font-size: 14px !important;
+    color: #04436f !important
+}
+
+.chatbot-body {
+    background: White !important
+}
+
+.k-chat .k-message-box {
+    background: White !important;
+    border-color: White !important
+}
+
+.k-message-box .k-input {
+    background: White !important
+}
+
+.chat-box.k-content {
+    border-color: White !important
+}
+
+.k-message-box .k-button.k-flat.k-button-icon.k-button-send {
+    background-color: gray !important
+}
+
+.k-bubble {
+    font-family: Arial !important;
+    font-size: 14px !important
+}
+
+.k-chat .k-bubble {
+    color: Black !important;
+    border-color: Gainsboro !important;
+    background-color: Gainsboro !important
+}
+
+.k-message-box .k-input {
+    font-size: 14px !important;
+    font-family: Arial !important
+}
+
+.chat-button {
+    background-color: transparent !important
+}
+
+.k-button.k-bare,
+.k-button.k-flat {
+    background: #04436f !important;
+    color: White !important;
+    font-size: 14px !important;
+    font-family: Arial !important
+}
+
+.k-button.k-bare,
+.k-button.k-flat:hover {
+    background: #17a2b8 !important;
+    color: Black !important;
+    font-size: 14px !important;
+    font-family: Arial !important
+}
+
+.k-card-title {
+    font-size: 14px !important;
+    font-family: Arial !important
+}
+
+.k-card-title+.k-card-subtitle {
+    font-size: 0px !important;
+    font-family: Arial !important
+}
+
+.k-quick-reply {
+    background: #04436f !important;
+    border-color: #04436f !important;
+    color: White !important;
+    font-size: 14px !important;
+    font-family: Arial !important
+}
+
+.k-quick-reply:hover {
+    background: #17a2b8 !important;
+    border-color: #17a2b8 !important;
+    color: Black !important;
+    font-size: 14px !important;
+    font-family: Arial !important
+}
+
+.k-chat .k-alt .k-bubble {
+    background: Gainsboro !important;
+    border-color: Gainsboro !important;
+    color: Black !important
+}
+
+.chat-button {
+    background-image: url("https://unifenasprod.cronapp.io/img/unifenasavatar.png") !important;
+    width: 99px !important;
+    height: 140px !important;
+    background-size: 100% !important;
+    border-radius: 0% !important
+}
+
+.chatMin-button {
+    font-family: Arial !important
+}
